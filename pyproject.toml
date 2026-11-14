@@ -1,0 +1,31 @@
+[project]
+name = "maluscallus"
+version = "0.1.0"
+description = "macOS WeChat GUI bridge (wejam.v1 wire-compatible)"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "grpcio",
+  "protobuf",
+  "pyobjc-framework-Cocoa",
+  "pyobjc-framework-Quartz",
+  "pyobjc-framework-ApplicationServices",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "grpcio-tools"]
+
+[project.scripts]
+maluscallus = "agent.main:serve"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["agent*", "wejam*", "callus*"]
+exclude = ["tests*", "proto*", "data*", "docs*", "scripts*"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

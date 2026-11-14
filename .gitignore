@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.png
+*.jpg
+.env
+.env.*
+*.egg-info/
+maluscallus.egg-info/
+dist/
+build/
+data/media/*
+!data/media/.gitkeep
+docs/probe-raw.txt
